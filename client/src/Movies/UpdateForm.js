@@ -3,7 +3,6 @@ import { useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 const initialMovie = {
-  id: '',
   title: '',
   director: '',
   metascore: '',
@@ -19,21 +18,24 @@ const UpdateForm = props => {
       .get(`http://localhost:5000/api/movies/${id}`)
       .then(res => {
         // res.data
-        setItem(res.data);
+        setMovie(res.data);
       })
       .catch(err => console.log(err));
   }, [id]);
 
-  const changeHandler = ev => {
-    ev.persist();
-    // let value = ev.target.value;
+  const changeHandler = e => {
+    e.persist();
+
+    let value = e.target.name===`stars` ? e.target.value.split(','): e.target.value;
+
     // if (ev.target.name === 'metascore') {
     //   value = parseInt(value, 10);
     // }
 
+    
     setMovie({
       ...movie,
-      [ev.target.name]: value
+      [e.target.name]: value
     });
   };
 
@@ -43,11 +45,9 @@ const UpdateForm = props => {
     axios
       .put(`http://localhost:5000/api/movies/${id}`, movie)
       .then(res => {
-        // res.data
-        props.getMovielist();
+        props.getMovieList();
         push(`/`);
 
-        // res.data ==> just updated item object
       })
       .catch(err => console.log(err));
   };
@@ -88,7 +88,7 @@ const UpdateForm = props => {
           name="stars"
           onChange={changeHandler}
           placeholder="stars"
-          value={movie.stars}
+          value={movie.stars.join(',')}
         />
         <div className="baseline" />
 

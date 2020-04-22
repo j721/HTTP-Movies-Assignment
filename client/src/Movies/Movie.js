@@ -32,14 +32,14 @@ function Movie({ addToSavedList }) {
   }
 
   // Delete item function
-  const deleteItem = e =>{
-    e.preventDefault();
-    axios.delete(`http://localhost:5000/api/movies/${movie.id}`)
-    .then(res=>{
-      console.log(res)
-    })
-    .catch(err=>console.log(err))
-  }
+  // const deleteMovie = e =>{
+  //   e.preventDefault();
+  //   axios.delete(`http://localhost:5000/api/movies/${movie.id}`)
+  //   .then(res=>{
+  //     console.log(res)
+  //   })
+  //   .catch(err=>console.log(err))
+  // }
 
 
   return (
@@ -54,9 +54,9 @@ function Movie({ addToSavedList }) {
         Update 
       </div>
 
-      <div className="delete-button" onClick ={deleteMovie}>
+      {/* <div className="delete-button" onClick ={deleteMovie}>
         Delete
-      </div>
+      </div> */}
 
     </div>
   );
