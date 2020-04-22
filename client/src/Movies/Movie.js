@@ -26,6 +26,17 @@ function Movie({ addToSavedList }) {
     return <div>Loading movie information...</div>;
   }
 
+  // Delete item function
+  const deleteItem = e =>{
+    e.preventDefault();
+    axios.delete(`http://localhost:5000/api/movies/${movie.id}`)
+    .then(res=>{
+      console.log(res)
+    })
+    .catch(err=>console.log(err))
+  }
+
+
   return (
     <div className="save-wrapper">
       <MovieCard movie={movie} />
@@ -33,6 +44,15 @@ function Movie({ addToSavedList }) {
       <div className="save-button" onClick={saveMovie}>
         Save
       </div>
+
+      <div className="update-button" onClick ={updateMovie}>
+        Update 
+      </div>
+
+      <div className="delete-button" onClick ={deleteMovie}>
+        Delete
+      </div>
+
     </div>
   );
 }
