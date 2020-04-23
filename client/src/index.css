@@ -2,18 +2,22 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  background:black;
+  height: 100vh;
 }
 
 .movie-card {
-  background-color: #fff;
+  background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
+  color:white; 
   border: 0;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
-    0 2px 4px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
   padding: 1rem;
   cursor: pointer;
   position: relative;
-  margin: 1rem auto;
+  margin: 2rem 6rem;
+  text-align: center;
 }
 
 .movie-director {
@@ -33,7 +37,7 @@ body {
   width: 75%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .saved-list h3 {
@@ -50,7 +54,7 @@ body {
 }
 .save-wrapper {
   position: relative;
-  width: 75%;
+  width: 100%;
   margin: 1rem auto;
 }
 .save-button {
@@ -74,4 +78,17 @@ body {
 .movie-warning {
   color: red;
   text-align: center;
+}
+
+.update-button, .delete-button{
+  margin: 7% 0;
+  border: 1px solid floralwhite;
+  width: 4em;
+  padding: 1%;
+  border-radius: 0.5em;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
 }
