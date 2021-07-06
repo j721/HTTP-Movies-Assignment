@@ -2,18 +2,31 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
 }
 
 .movie-card {
-  background-color: #fff;
+  background-color: #bf3a30;
+  background-image: linear-gradient(315deg, #bf3a30 0%, #864ba2 74%);
+  color: white;
   border: 0;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
   padding: 1rem;
   cursor: pointer;
   position: relative;
-  margin: 1rem auto;
+  margin: 2rem 6rem;
+  text-align: center;
+  /* transition: 5s ease; */
+  transition: width 3s linear 2s;
+  /* transition-delay: 1s; */
+}
+
+.movie-card:hover {
+  width: 85%;
 }
 
 .movie-director {
@@ -22,7 +35,7 @@ body {
 }
 
 .saved-list {
-  background-color: #fff;
+  background-color: #a07887;
   border: 0;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
@@ -30,10 +43,10 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
-  width: 75%;
+  width: 88%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .saved-list h3 {
@@ -50,28 +63,46 @@ body {
 }
 .save-wrapper {
   position: relative;
-  width: 75%;
+  width: 100%;
   margin: 1rem auto;
 }
 .save-button {
-  position: absolute;
-  top: 25px;
-  right: 25px;
   border: 1px solid grey;
   padding: 5px 10px;
-  background-color: lightseagreen;
+  background-color: #673ab7;
+  color: white;
+  width: 5em;
+  text-align: center;
+  border-radius: 0.5em;
 }
 .save-button:hover {
-  background-color: green;
+  background-color: #a1b1bd;
   color: white;
 }
 
 .home-button {
-  padding: 5px 10px;
-  background-color: lightskyblue;
+  margin-right: 9%;
 }
 
 .movie-warning {
   color: red;
   text-align: center;
+}
+
+.update-button,
+.delete-button,
+.form-button {
+  margin: 7% 0;
+  border: 1px solid grey;
+  width: 4em;
+  padding: 1%;
+  border-radius: 0.5em;
+  text-align: center;
+  color: white;
+  background: #a07887;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
